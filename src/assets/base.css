@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url(../assets/fonts/Montserrat/Montserrat-Regular.ttf) format(truetype);
+}
+@font-face {
+    font-family: 'Montserrat-Italic';
+    src: url(../assets/fonts/Montserrat/Montserrat-Italic.ttf) format(truetype);
+}
+:root{
+    --font-family-base:'Montserrat-Regular';
+    --font-family-italic:'Montserrat-Italic';
+    --base-color: rgb(3, 37, 53);
+    --primary-color: rgb(2, 61, 89);
+    --secondary-color:rgb(77, 67, 93);
+    --rgba-background:rgba(77, 67, 93, 0.2);
+    --color-black:rgb(1, 10, 22);
+    --color-gray:#5e5b5b;
+    --color-gray-primary:#747171;
+    --background-button-hover:#b9b6b6;
+    --color-gray-tertiary:#bab7b7;
+    --background-button:#eaeaeaee ;
+    --background-main: rgb(240, 238, 238) ;
+    --background-button-number:#aaaaaa ;
+    --color-white:#fff;
+    --box-shadow:0px 1px 10px 0px #00000038;
+    --border-radius-base:9px;
+    --border-radius-primary:5px;
+}
+
+*{
+    position: relative;
+    padding: 0;
+    margin: 0;
+    z-index: 5;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: black;
+    font-family:var(--font-family-base) ;
+}
+
+a, a.active a:hover{
+    text-decoration: none;
+}
+body{
+    overflow-x: hidden;
+}
+ul li{
+    list-style-type: none;
+}
+header{
+  /* position: fixed; */
+  /* top: 0;
+  left: 0; */
+  /* width: 100%; */
+  /* background-color: var(--color-white);
+  box-shadow: var(--box-shadow); */
+}
+.container{
+    padding: 0 15px;
+    margin: 0 auto;
+    max-width: 1140px;
+}
+main{
+    height: calc(100vh - 70px);
+    z-index: -1;
+    background-color:var(--background-main); 
+    overflow-y: scroll;
+}
+/* canvas {
+    width: 100%;
+    height: 100%;
+    margin-bottom: -10px;
+    height: 60px; 
+  } */
+  .user__main__title{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+.user__main__title h1{
+    font-size: 20px;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+.user__main__title hr{
+   height: 4px;
+   background-color: var(--primary-color);
+}
