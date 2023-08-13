@@ -1,3 +1,4 @@
 export type Number = {
-    number:''
+    number:string,
+    color:string
 }

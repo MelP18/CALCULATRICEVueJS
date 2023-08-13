@@ -28,8 +28,8 @@
                     </div>
                 </div>
                 <div class="calculator__bottom">
-                    <!-- <Function/>  -->
-                    <SimpleCalculation @show="see" />
+                   <!--  <Function @showfunction="scientificMath"/>   -->
+                    <SimpleCalculation @show="simpleMath" />
                     <BtnOther @delete="clear"/>
                 </div>
             </div>
@@ -46,38 +46,91 @@ import Function from '@/components/Function.vue'
 import SimpleCalculation from '@/components/SimpleCalculation.vue'
 import BtnOther from '@/components/BtnOther.vue'
 import { userOpeationStore } from '@/stores/operation'
+import { userConnectionStore } from '@/stores/connection'
+import { storeToRefs } from 'pinia'
 const { addCalculation } = userOpeationStore()
 import { ref } from 'vue'
-
+import connectUserData from '@/components/LoginField.vue'
+import type { FunctionValue } from '@/Types/functionValue'
+const { userConnectData,} = storeToRefs(userConnectionStore())
+console.log(userConnectData);
+/* import { useRegistrationsStore } from '@/stores/registration'
+const {usersauth } = storeToRefs(useRegistrationsStore())
+console.log( usersauth); */
 /*========================= CALCULATION AND PUSH IN SUPABASE =========================*/
-let calculation = ''
-let calculate = ''
+let calculation = ref('')
+let calculate = ref()
 let result = ''
-function see(element) {
-    if (element !== "=") {
-        calculation += element
-        calculate = eval(calculation)
+function simpleMath(element:string) {
+    if (element != '=' ) {
+        calculation.value += (element)
+        calculate.value = eval(calculation.value)
     }
     else {
-        calculate = eval(calculation)
-        result = calculation + '=' +  calculate
-        calculation = ''
+        calculate.value = eval(calculation.value)
+        result = calculation.value + '=' +  calculate.value
+        calculation.value = ''
         console.log(result);
         const dataCalculation = {
+            e_mail:userConnectData.value,
             date: dayDate,
             hours:DayTime.value,
             calculation: result
         }
         addCalculation(dataCalculation)
         console.log(dataCalculation);
-        
     }
+
     return {result }
 }
+
+/* function scientificMath(item:string){
+    console.log(item);
+    if(item == '√'){
+     calculate.value = Math.sqrt(eval(calculation.value))
+     console.log(calculate.value);
+    }else if((item == 'π')){
+        calculate.value = Math.PI *(eval(calculation.value))
+     console.log(calculate.value);
+    }else if((item == 'a²')){
+        calculate.value =(eval(calculation.value))*(eval(calculation.value))
+     console.log(calculate.value);
+    }else if((item == 'ln')){
+        calculate.value = Math.log(eval(calculation.value))
+     console.log(calculate.value);
+    }else if((item == 'log')){
+        calculate.value = Math.log10(eval(calculation.value))
+     console.log(calculate.value);
+    }else if((item == 'E')){
+        calculate.value = Math.exp(eval(calculation.value))
+     console.log(calculate.value);
+    }else if((item == 'sin')){
+        calculate.value = Math.sin(eval(calculation.value))
+     console.log(calculate.value);
+    }else if((item == 'cos')){
+        calculate.value = Math.cos(eval(calculation.value))
+     console.log(calculate.value);
+    }else if((item == 'tan')){
+        calculate.value = Math.tan(eval(calculation.value))
+     console.log(calculate.value);
+    }else if((item == '(')){
+        calculation.value += item
+     console.log(calculate.value);
+    }else if((item == ')')){
+        calculation.value += item
+     console.log(calculate.value);
+    }else if((item == ',')){
+        calculation.value += item
+     console.log(calculate.value);
+    }
+} */
+
 function clear(){
-    calculate = ''
-    calculation = ''
+    calculate.value = ''
+    calculation.value = ''
 }
+
+
 /*========================= DAY =========================*/
 let dayDate = ''
 function date() {
@@ -105,17 +158,16 @@ async function time() {
 }
 const TimeR = time()
 setInterval(time, 1)
-/* Mth.sqrt():racine carré
+
 /*Math.floor(): entier d'un nombre decimal
 Math.ceil():arrondi qlqe soir le nombre apès la virgule
 Math.round():arrondi normalement
-Math.pow: le carr"
+
 Remainder(%) :modulo
-Math.abs: valur absolu
-Math.PI : pi,
-Math.log : ln
-Math.log10 : log
-Math.exp : E
+
+
+
+
 
 */
 
@@ -125,6 +177,7 @@ Math.exp : E
 <style scoped>
 .main__content {
     z-index: -1;
+    height: calc(100vh - 135px);
 }
 .calculator {
     padding: 5px 0 15px;
@@ -189,7 +242,7 @@ Math.exp : E
 
 .calculation__result {
     display: flex;
-    height: 78px;
+    height: 70px;
     flex-direction: column;
     gap: 10px;
     padding: 10px;
@@ -220,5 +273,10 @@ sup {
     width: 100%;
     background-color: var(--color-gray-tertiary);
     border-radius: var(--border-radius-base);
+}
+@media(max-width:767px){
+    .calculator__bottom {
+        flex-direction: column;
+    }
 }
 </style>

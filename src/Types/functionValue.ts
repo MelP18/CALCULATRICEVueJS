@@ -1,3 +1,4 @@
 export type FunctionValue ={
-    functionval:''
+    functionval:string,
+    color:string
 }

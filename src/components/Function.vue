@@ -19,10 +19,9 @@ import type { FunctionValue } from '@/Types/functionValue';
 
 const emits = defineEmits(['showfunction'])
 
-function viewfunction(element:FunctionValue){ 
-    console.log(element.functionval);
-    
-    emits('showfunction',element)
+function viewfunction(item:FunctionValue){ 
+    console.log(item);
+    emits('showfunction',item)
 }
 </script>
 

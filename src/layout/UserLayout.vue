@@ -33,9 +33,6 @@
         </div>
     </div>
 </template>
-
-
-
 /*=============================++++ JS ++++=================================*/
 <script lang="ts" setup>
 import IconPlatform from '@/components/IconPlatform.vue'
@@ -43,17 +40,9 @@ import Sidebar from '@/components/Sidebar.vue';
 import { RouterView } from "vue-router";
 import { storeToRefs } from "pinia";
 import { userConnectionStore } from '@/stores/connection';
-/* import { defineStore } from "pinia";
-import {ref} from 'vue' */
 import { onMounted } from 'vue';
-/* import { text } from 'stream/consumers'; */
-/* import { userConnectUserEmail } from '@/stores/connection' */
 const { userConnectData,} = storeToRefs(userConnectionStore())
 const {userData} = userConnectionStore()
-/* const userConnectValue = usersconnect.value
-
-const username = ref('') */
-
 
 onMounted(async()=>{
     await userData()
@@ -63,8 +52,12 @@ onMounted(async()=>{
 /*=============================++++ CSS ++++=================================*/
 
 <style scoped>
+.block{
+    overflow-x: hidden;
+}
 .block__content {
     display: flex;
+    
 }
 .icon {
     display: flex;
@@ -81,7 +74,7 @@ onMounted(async()=>{
     transition: 0.3s;
 }
 .main {
-    width: 94%;
+    width: calc(100% - 65px);
     height: 100vh;
     background-color: var(--rgba-background);
 }

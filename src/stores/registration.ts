@@ -10,21 +10,21 @@ export const useRegistrationsStore = defineStore("registration", () => {
 
     const usersauth = ref<UserAuth[]>([])
     const userregistration = ref<UserRegistration[]>([])
-    async function initialise() {
-        const { data, error } = await supabase.from('registrations').select('userName,e_mail,password')
+    async function addUser() {
+        const { data, error } = await supabase.from('registrations').insert('userName,e_mail')
         if (data) {
-            usersauth.value = data
+            userregistration.value = data
         }
         console.log(data);
     }
-    async function addUser(user: UserRegistration) {
+   /*  async function addUser(user: UserRegistration) {
         const { data, error } = await supabase
             .from('registrations')
-            .insert(user)
+            .insert('userName',)
         if (data) {
             userregistration.value.push(data[0])
         }
-    }
+    } */
      
 /*     const userConnectData = supabase.auth.getSession() */
    /*  const userConnectUserName = computed(async()=> {
@@ -36,5 +36,5 @@ export const useRegistrationsStore = defineStore("registration", () => {
         }
     } ) */
     
-    return { usersauth, initialise, addUser }
+    return { usersauth, addUser }
 })

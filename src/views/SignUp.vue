@@ -68,7 +68,7 @@ async function submitRegistration(user: UserAuth) {
          errorText.value = error.message
          console.log(error);
     }else{
-        router.replace('/login')
+        router.replace('/user')
     } 
           
 
@@ -155,13 +155,12 @@ async function submitRegistration(user: UserAuth) {
     height: 100%;
     padding: 10px 20px;
     overflow-y: scroll;
-    overflow-x: hidden;
     background-color: var(--secondary-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center;  */
     gap: 25px;
+    overflow-x: hidden;
 }
 
 .register__field::-webkit-scrollbar {
@@ -212,6 +211,7 @@ async function submitRegistration(user: UserAuth) {
     height: 100%;
     padding: 15px;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .register__information::-webkit-scrollbar {

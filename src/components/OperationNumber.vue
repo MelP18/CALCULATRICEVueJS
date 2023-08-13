@@ -1,7 +1,7 @@
 /*=============================++++ HTML ++++=================================*/
 <template>
     <div class="bottom__centre__bottom">
-        <div class="calculation__number" v-for="element in  numberValue">
+        <div class="calculation__number" v-for="element in  numbers">
             <button @click="show(element)" :style="{'background-color':element.color}" >{{ element.number }}</button>
         </div>
     </div>
@@ -17,15 +17,15 @@ const emits = defineEmits(['get'])
 
 const numbers = ref([
     {
-        number:7,
+        number:'7',
         color:'#aaaaaa'
     },
     {
-        number:8,
+        number:'8',
         color:'#aaaaaa'
     },
     {
-        number:9,
+        number:'9',
         color:'#aaaaaa'
     },
     {
@@ -33,15 +33,15 @@ const numbers = ref([
         color:'#eaeaeaee'
     },
     {
-        number:4,
+        number:'4',
         color:'#aaaaaa'
     },
     {
-        number:5,
+        number:'5',
         color:'#aaaaaa'
     },
     {
-        number:6,
+        number:'6',
         color:'#aaaaaa'
     },
     {
@@ -49,15 +49,15 @@ const numbers = ref([
         color:'#eaeaeaee'
     },
     {
-        number:1,
+        number:'1',
         color:'#aaaaaa'
     },
     {
-        number:2,
+        number:'2',
         color:'#aaaaaa'
     },
     {
-        number:3,
+        number:'3',
         color:'#aaaaaa'
     },
     {
@@ -65,7 +65,7 @@ const numbers = ref([
         color:'#eaeaeaee'
     }, 
     {
-        number:0,
+        number:'0',
         color:'#aaaaaa'
     },
     {

@@ -2,7 +2,7 @@
 <template>
     <div class="bottom__left__bottom">
         <div class="calcultion__fonction" v-for="element in functionValue">
-            <button @click="showfunct(element)" :style="{'background-color':element.color}">{{ element.function }}</button>
+            <button @click="showfunct(element)" :style="{'background-color':element.color}">{{ element.functionval }}</button>
         </div>
     </div>
 </template>
@@ -14,60 +14,60 @@ import type {FunctionValue} from '@/Types/functionValue'
 const emits = defineEmits(['seefunction'])
 const functions = ref([
     {
-        function:'a²',
+        functionval:'a²',
         color:'#eaeaeaee'
     },
     {
-        function:'ab',
+        functionval:'√',
         color:'#eaeaeaee'
     },
     {
-        function:'|a|',
+        functionval:'π',
         color:'#eaeaeaee'
     },
     {
-        function:'√',
+        functionval:'ln',
         color:'#eaeaeaee'
     },
     {
-        function:'n√',
+        functionval:'log',
         color:'#eaeaeaee'
     },
     {
-        function:'π',
+        functionval:'E',
         color:'#eaeaeaee'
     },
     {
-        function:'sin',
+        functionval:'sin',
         color:'#eaeaeaee'
     },
     {
-        function:'cos',
+        functionval:'cos',
         color:'#eaeaeaee'
     },
     {
-        function:'tan',
-        color:'#eaeaeaee'
-    },
-        {
-        function:'(',
+        functionval:'tan',
         color:'#eaeaeaee'
     },
     {
-        function:')',
+        functionval:'(',
         color:'#eaeaeaee'
     },
     {
-        function:',',
+        functionval:')',
+        color:'#eaeaeaee'
+    },
+    {
+        functionval:',',
         color:'#eaeaeaee'
     } 
 ])
 const functionValue = functions.value
 console.log(functionValue);
 
-function showfunct(element:FunctionValue){
-  emits('seefunction',element.functionval)
-  console.log(element.functionval);
+function showfunct(item:FunctionValue){
+  emits('seefunction',item.functionval)
+  console.log(item.functionval);
 }
 </script>
 /*=============================++++ CSS ++++=================================*/

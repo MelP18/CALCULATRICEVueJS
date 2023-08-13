@@ -1,5 +1,6 @@
 export type Calculation = {
-    date:'',
-    hours:'',
-    calculation:''
+    e_mail:string,
+    date:string,
+    hours:string,
+    calculation:string
 }
