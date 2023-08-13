@@ -107,6 +107,7 @@
     color: var(--color-white);
     line-height: 25px;
     letter-spacing: 1px;
+    white-space: wrap;
 }
 .fonctionnality__list {
     display: flex;

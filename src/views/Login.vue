@@ -79,7 +79,7 @@ import LoginField from '@/components/LoginField.vue'
 
 .main__background img {
     position: absolute;
-    opacity: 0.3;
+    opacity: 0.2;
     width: 100%;
     height: 100%;
 }

@@ -39,9 +39,12 @@ async function signOut() {
     gap:25px;
     justify-content: center;
     align-items: center;
-    transition: 1s;
+    background-color: var(--rgba-background);
+    transition: 1s; 
+    border-radius: var(--border-radius-base);
 }   
 .logout__content button{
+    cursor: pointer;
     padding: 8px 25px;
     background-color: var(--base-color);
     border-radius: var(--border-radius-base);

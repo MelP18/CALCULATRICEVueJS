@@ -33,8 +33,8 @@
 
 <style scoped>
 .sidebar__menu__logo {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -44,7 +44,7 @@
 
 .sidebar {
     z-index: 7;
-    width: 6%;
+    width: 65px;
     margin-top: 62px;
     height: calc(100vh - 62px);
     background-color: var(--base-color);
@@ -66,8 +66,8 @@
 }
 
 .sidebar__menu__list .sidebar__menu__list__item {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;

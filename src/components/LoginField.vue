@@ -1,13 +1,13 @@
 /*=============================++++ HTML ++++=================================*/
 <template>
     <div class="register__field__list">
-         <div class="register__field__list__item">
+        <!--  <div class="register__field__list__item">
             <label for="">Username</label>
             <div class="register__field__list__item__input">
                 <span class="mdi mdi-account"></span>
                 <input type="text" placeholder="yourUserName" v-model="username.userName" >
             </div>
-        </div>
+        </div> -->
         <div class="register__field__list__item">
             <label for="">E-mail</label>
             <div class="register__field__list__item__input">
@@ -58,9 +58,9 @@ const connectUserData = ref({
     e_mail: '',
     password: ''
 })
-const username= ref({
+/* const username= ref({
     userName:''
-})
+}) */
 const { addUserConnect } = userConnectionStore()
 /* async function userConnection() {
     const connectUser = connectUserData.value
@@ -83,13 +83,13 @@ const { addUserConnect } = userConnectionStore()
          errorText.value = error.message
          console.log(error);
     }else{
-        const usermail = connectUserData.value.e_mail
+        /* const usermail = connectUserData.value.e_mail
         const userName = username.value.userName
         const datauser = {
             userName:userName,
             e_mail:usermail
-        }
-        addUserConnect(datauser) 
+        } 
+        addUserConnect(datauser)*/ 
         router.replace('/user')
     }
      

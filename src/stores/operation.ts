@@ -1,4 +1,4 @@
-import { defineStore } from "pinia";
+import { defineStore, storeToRefs } from "pinia";
 import { ref } from 'vue'
 import { supabase } from "@/lib/users";
 import type { Calculation } from "@/Types/calculation";
@@ -7,7 +7,7 @@ export const userOpeationStore = defineStore("operation", () => {
 
     const usercalculation = ref<Calculation[]>([])
     async function initialise() {
-        const { data, error } = await supabase.from('calculates').select('date,hours,calculation')
+        const { data, error } = await supabase.from('historiques').select('e_mail,date,hours,calculation')
         if (data) {
             usercalculation.value = data
         }
@@ -15,7 +15,7 @@ export const userOpeationStore = defineStore("operation", () => {
     } 
     async function addCalculation(calculation:Calculation) {
         const { data, error } = await supabase
-        .from('calculates')
+        .from('historiques')
         .insert(calculation) 
     /*     .select('date,hours,calculation') */
         if (data) {

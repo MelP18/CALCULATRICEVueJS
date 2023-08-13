@@ -71,6 +71,7 @@ import IconPlatform from '@/components/IconPlatform.vue';
     justify-content: center;
     height: 100vh;
     align-items: center;
+    overflow: hidden;
 }
 .main__background {
     position: absolute;

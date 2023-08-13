@@ -5,7 +5,10 @@
             <h1>CALCULATRICE</h1>
             <hr>
         </div>
-        <Calculator/>
+        <div class="calculatrice">
+            <Calculator/>
+        </div>
+        
     </div>
 </template>
 
@@ -14,3 +17,13 @@
 import Calculator from '@/components/Calculator.vue';
 
 </script>
+<style>
+.calculatrice{
+    width: 100%;
+    height: calc(100vh - 135px);
+    text-align: center;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+</style>

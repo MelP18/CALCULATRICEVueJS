@@ -13,12 +13,14 @@
                     
                 </tr>
             </thead>
-            <tbody class="body" v-for="element in usercalculation">
-                <tr class="body__content">
-                    <td>{{ element.date }}</td>
-                    <td>{{ element.hours }}</td>
-                    <td>{{ element.calculation }}</td>
-                </tr>
+            <tbody class="body" v-if="usercalculation" v-for="element in usercalculation">
+                <div class="verify" v-if="element.e_mail == userConnectData">
+                    <tr class="body__content">
+                        <td>{{ element.date }}</td>
+                        <td>{{ element.hours }}</td>
+                        <td>{{ element.calculation }}</td>
+                    </tr>
+                </div>
             </tbody>
             
         </table>
@@ -30,21 +32,27 @@
 
 import type { Calculation } from '@/Types/calculation'
 import { userOpeationStore } from '@/stores/operation'
-/* import { supabase } from "@/lib/users"; */
 import { onMounted, ref } from 'vue'
 import { storeToRefs } from 'pinia'
 const { initialise } = userOpeationStore()
+import { userConnectionStore } from '@/stores/connection'
 const { usercalculation } = storeToRefs(userOpeationStore())
+const { userConnectData,} = storeToRefs(userConnectionStore())
+console.log(usercalculation.value); 
 
 onMounted(async () => {
     await initialise()
 })
+
+/* const verifycation = usercalculation.value.filter(item =>(item.e_mail == userConnectData.value))
+console.log(userConnectData.value);  */ 
 
 </script>
 
 <style scoped>
 table {
     width: 100%;  
+    border: 1px solid var(--base-color);
 }
 thead{
     width: 100%;
@@ -73,25 +81,17 @@ tbody{
     gap: 2px;
     
 }
-.body:nth-child(even) td{
-    width: 100%;
-    display: flex;
-    padding: 8px;
-    justify-content: center;
-    gap: 2px;
-    background-color:var(--color-gray-primary);
-    color: var(--color-white);
-    font-weight: bold;
-}
+
 .body td{
     width: 100%;
     display: flex;
     padding: 8px;
     justify-content: center;
+    letter-spacing: 2px;
     gap: 2px;
-    background-color: var(--secondary-color);
-    color: var(--color-white);
-     font-weight: bold;
+    background-color: var(--color-gray-tertiary);
+    color: var(--base-color);
+    font-weight: bold;
 }
 
 
