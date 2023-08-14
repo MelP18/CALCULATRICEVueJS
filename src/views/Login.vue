@@ -34,9 +34,6 @@
 
 <script lang="ts"  setup>
 import Header from '@/components/Header.vue'
-import image from '@/assets/images/impots2_1.jpg'
-import video from '@/assets/video/A partir de hoy; Marco Di Mauro ft. Maite Perroni - letra.mp4'
-
 import image2 from '@/assets/images/remboursement-notes-de-frais.jpg'
 import IconPlatform from '@/components/IconPlatform.vue';
 import LoginField from '@/components/LoginField.vue'
