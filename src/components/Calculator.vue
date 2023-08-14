@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="calculator__bottom">
-                   <!--  <Function @showfunction="scientificMath"/>   -->
+                   <Function @showfunction="scientificMath"/> 
                     <SimpleCalculation @show="simpleMath" />
                     <BtnOther @delete="clear"/>
                 </div>
@@ -84,7 +84,7 @@ function simpleMath(element:string) {
     return {result }
 }
 
-/* function scientificMath(item:string){
+function scientificMath(item:string){
     console.log(item);
     if(item == '√'){
      calculate.value = Math.sqrt(eval(calculation.value))
@@ -123,7 +123,7 @@ function simpleMath(element:string) {
         calculation.value += item
      console.log(calculate.value);
     }
-} */
+}
 
 function clear(){
     calculate.value = ''
