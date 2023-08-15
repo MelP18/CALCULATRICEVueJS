@@ -7,23 +7,19 @@ import UserLayout from '@/layout/UserLayout.vue'
 import Profile from '@/views/user/Profile.vue'
 import Logout from '@/views/user/Logout.vue'
 import Historique from '@/views/user/Historique.vue'
-
+import ErrorPage from '@/views/ErrorPage.vue'
 
 
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    
     {
       path: '/',
       name: 'home',
       component: Home
     },
-   /*  {
-      path: '/Calculator',
-      name: 'Calculator',
-      component: UserInterface
-    }, */
     {
       path: '/signup',
       name: 'Sign up',
@@ -33,6 +29,10 @@ const router = createRouter({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {path:'/*',
+    name: 'PageNotFound',
+    component: ErrorPage
     },
     {
       path: '/user',
