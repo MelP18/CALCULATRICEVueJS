@@ -30,7 +30,7 @@ const router = createRouter({
       name: 'Login',
       component: Login
     },
-    {path:'/*',
+    {path:'/:catchAll(.*)*',
     name: 'PageNotFound',
     component: ErrorPage
     },
