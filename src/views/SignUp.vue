@@ -80,7 +80,7 @@ async function submitRegistration(user: UserAuth) {
     justify-content: center;
     height: 100vh;
     align-items: center;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .main__background {
