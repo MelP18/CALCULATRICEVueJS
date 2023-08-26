@@ -13,14 +13,12 @@
             <div class="main__foreground__img">
                 <img :src="image2" alt="">
                 <div class="login">
+                    <Header class="header"/>
                     <div class="login__field">
-                        <Header class="header"/>
                         <h3>Connection</h3>
                         <LoginField/>  
                     </div>
-                    <div class="login__video">
-                       <!--  <video :src="video"  controls loop></video> -->
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -61,8 +59,7 @@ import LoginField from '@/components/LoginField.vue'
 
 .main__background .main__background__left {
     padding: 15px;
-  /*   background-color: var(--rgba-background);
-    background-color: var(--base-color); */
+  background-color: var(--rgba-background);
     width: 70%;
     height: 100%;
 }
@@ -74,21 +71,12 @@ import LoginField from '@/components/LoginField.vue'
     height: 100%;
 }
 
-.main__background img {
-    position: absolute;
-    opacity: 0.2;
-    width: 100%;
-    height: 100%;
-}
-
 .main__foreground {
     background-color: var(--color-black);
-    /* display: flex;
-    justify-content: center;
-    align-items: center;  */
     width: 80%;
     height: 80vh;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    
 }
 
 .main__foreground__img {
@@ -105,68 +93,40 @@ import LoginField from '@/components/LoginField.vue'
 }
 
 .login {
+    padding: 25px;
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba( 255, 255, 255, 0.25 );
+    background-color: var(--rgba-background);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .login__field {
-    width: 35%;
-    width: 30.5rem;
+    width: 70%;
     height: 100%;
     padding: 10px 20px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    background-color: var(--secondary-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
-   /*  align-items: center; */
-    gap: 20px;
+    gap: 25px;
+    overflow-x: hidden;
 }
 
-.login__field::-webkit-scrollbar {
-    width: 5px;
-}
 
-.login__field::-webkit-scrollbar-thumb {
-    background-color: var(--base-color);
-    border-radius: 15px;
-}
 
-/* .header {
-    margin-top: 25px;
-} */
 .login__field h3 {
     text-align: center;
     font-size: 18px;
     font-weight: bold;
-    color: var(--base-color);
+    color: var(--color-white);
     font-family: var(--font-family-italic);
 }
 
 
-.login__video {
-    width: 65%;
-    height: 100%;
-   /*  padding: 15px; */
-   /*  overflow-y: scroll; */
-}
-
-/* .login__video::-webkit-scrollbar {
-    width: 5px;
-}
-
-.login__video::-webkit-scrollbar-thumb {
-    background-color: var(--color-white);
-    border-radius: 15px;
-}  */
-.login__video{
-    overflow: hidden;
-}
-.login__video video{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 </style>

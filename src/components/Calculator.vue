@@ -68,9 +68,8 @@ function simpleMath(element:string) {
     }
     else {
         calculate.value = eval(calculation.value)
-        result = calculation.value + '=' +  calculate.value
+        result = calculation.value + ' = ' +  calculate.value
         calculation.value = ''
-        console.log(result);
         const dataCalculation = {
             e_mail:userConnectData.value,
             date: dayDate,
@@ -78,51 +77,60 @@ function simpleMath(element:string) {
             calculation: result
         }
         addCalculation(dataCalculation)
-        console.log(dataCalculation);
     }
 
     return {result }
 }
 
 function scientificMath(item:string){
-    console.log(item);
+   
     if(item == '√'){
      calculate.value = Math.sqrt(eval(calculation.value))
-     console.log(calculate.value);
+
     }else if((item == 'π')){
         calculate.value = Math.PI *(eval(calculation.value))
-     console.log(calculate.value);
+
     }else if((item == 'a²')){
         calculate.value =(eval(calculation.value))*(eval(calculation.value))
-     console.log(calculate.value);
+
     }else if((item == 'ln')){
         calculate.value = Math.log(eval(calculation.value))
-     console.log(calculate.value);
+
     }else if((item == 'log')){
         calculate.value = Math.log10(eval(calculation.value))
-     console.log(calculate.value);
+
     }else if((item == 'E')){
         calculate.value = Math.exp(eval(calculation.value))
-     console.log(calculate.value);
+
     }else if((item == 'sin')){
         calculate.value = Math.sin(eval(calculation.value))
-     console.log(calculate.value);
+
     }else if((item == 'cos')){
         calculate.value = Math.cos(eval(calculation.value))
-     console.log(calculate.value);
+
     }else if((item == 'tan')){
         calculate.value = Math.tan(eval(calculation.value))
-     console.log(calculate.value);
-    }else if((item == '(')){
-        calculation.value += item
-     console.log(calculate.value);
-    }else if((item == ')')){
-        calculation.value += item
-     console.log(calculate.value);
-    }else if((item == ',')){
-        calculation.value += item
-     console.log(calculate.value);
+
+    }else if((item == '|a|')){
+       calculate.value = Math.abs(eval(calculation.value))
+
+    }else if((item == 'tanh')){
+        calculate.value = Math.tanh(eval(calculation.value))
+
+    }else if((item == 'atan')){
+        calculate.value = Math.atan(eval(calculation.value))
+
     }
+
+    calculation.value = item + ' ( ' + calculation.value + ' ) ';
+    result = calculation.value + ' = ' +  calculate.value
+    const dataCalculation = {
+            e_mail:userConnectData.value,
+            date: dayDate,
+            hours:DayTime.value,
+            calculation: result
+        }
+        addCalculation(dataCalculation)
 }
 
 function clear(){
@@ -158,18 +166,6 @@ async function time() {
 }
 const TimeR = time()
 setInterval(time, 1)
-
-/*Math.floor(): entier d'un nombre decimal
-Math.ceil():arrondi qlqe soir le nombre apès la virgule
-Math.round():arrondi normalement
-
-Remainder(%) :modulo
-
-
-
-
-
-*/
 
 </script>
 

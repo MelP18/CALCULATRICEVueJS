@@ -18,7 +18,7 @@ const functions = ref([
         color:'#eaeaeaee'
     },
     {
-        functionval:'√',
+        functionval:'|a|',
         color:'#eaeaeaee'
     },
     {
@@ -34,7 +34,7 @@ const functions = ref([
         color:'#eaeaeaee'
     },
     {
-        functionval:'E',
+        functionval:'√',
         color:'#eaeaeaee'
     },
     {
@@ -50,15 +50,15 @@ const functions = ref([
         color:'#eaeaeaee'
     },
     {
-        functionval:'(',
+        functionval:'tanh',
         color:'#eaeaeaee'
     },
     {
-        functionval:')',
+        functionval:'atan',
         color:'#eaeaeaee'
     },
     {
-        functionval:',',
+        functionval:'E',
         color:'#eaeaeaee'
     } 
 ])

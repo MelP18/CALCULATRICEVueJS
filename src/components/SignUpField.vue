@@ -1,22 +1,11 @@
 /*=============================++++ HTML ++++=================================*/
 <template>
     <div class="register__field__list">
-        <!-- <div class="register__field__list__item">
-            <label for="">Username</label>
-            <div class="register__field__list__item__input">
-                <span class="mdi mdi-account"></span>
-                <input type="text" placeholder="yourUserName" v-model="userData.userName" >
-            </div>
-        </div> -->
-        <!-- <div class="register__field__list__item">
-            <label for="">Photo</label>
-            <input type="file" placeholder="monnom@exemple.com">
-        </div> -->
         <div class="register__field__list__item">
             <label for="">E-mail</label>
             <div class="register__field__list__item__input">
                 <span class="mdi mdi-mail"></span>
-                <input type="email" placeholder="name@exemple.com" v-model="userData.e_mail">
+                <input type="email" v-model="userData.e_mail">
             </div>
         </div>
         <div class="register__field__list__item">
@@ -24,17 +13,6 @@
             <div class="register__field__list__item__input__pass">
                 <span class="mdi mdi-lock"></span>
                 <input type="password" v-model="userData.password" >
-                <!-- <span class="mdi mdi-eye"></span>
-                <span class="mdi mdi-eye-off"></span> -->
-            </div>
-        </div>
-        <div class="register__field__list__item">
-            <label for="">Confirm Password</label>
-            <div class="register__field__list__item__input__pass">
-                <span class="mdi mdi-lock"></span>
-                <input type="password" v-model="userData.password">
-                <!-- <span class="mdi mdi-eye"></span>
-                <span class="mdi mdi-eye-off"></span> -->
             </div>
         </div>
     </div>
