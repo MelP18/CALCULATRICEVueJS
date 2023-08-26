@@ -13,19 +13,13 @@
             <div class="main__foreground__img">
                 <img :src="image2" alt="">
                 <div class="register">
+                        <Header class="header" /> 
                     <div class="register__field">
-                        <Header class="header" />
                         <h3>Registration</h3>
                         <div class="error__part">
                             <p class="error">{{errorText }}</p>
                         </div>
                         <SignUpField @submit="submitRegistration" />
-                        <!-- <div class="btn__submit">
-                            <button type="submit">Submit</button>
-                        </div> -->
-                    </div>
-                    <div class="register__information">
-                        <SignUpInformation />
                     </div>
                 </div>
             </div>
@@ -69,8 +63,7 @@ async function submitRegistration(user: UserAuth) {
          console.log(error);
     }else{
         router.replace('/user')
-    } 
-          
+    }        
 
 }
 /* onMounted(async () => {
@@ -100,7 +93,6 @@ async function submitRegistration(user: UserAuth) {
 .main__background .main__background__left {
     padding: 15px;
     background-color: var(--rgba-background);
-    background-color: var(--rgba-background);
     width: 70%;
     height: 100%;
 }
@@ -112,19 +104,8 @@ async function submitRegistration(user: UserAuth) {
     height: 100%;
 }
 
-.main__background img {
-    position: absolute;
-    opacity: 0.3;
-    width: 100%;
-    height: 100%;
-}
-
 .main__foreground {
     background-color: var(--color-black);
-   
-    /* display: flex;
-    justify-content: center;
-    align-items: center;  */
     width: 80%;
     height: 80vh;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
@@ -144,18 +125,24 @@ async function submitRegistration(user: UserAuth) {
 }
 
 .register {
+    padding: 25px;
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba( 255, 255, 255, 0.25 );
+    background-color: var(--rgba-background);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .register__field {
-    width: 35%;
-    width: 30.5rem;
+    width: 70%;
     height: 100%;
     padding: 10px 20px;
-    overflow-y: scroll;
-    background-color: var(--secondary-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -163,63 +150,25 @@ async function submitRegistration(user: UserAuth) {
     overflow-x: hidden;
 }
 
-.register__field::-webkit-scrollbar {
-    width: 5px;
-}
-
-.register__field::-webkit-scrollbar-thumb {
-    background-color: var(--base-color);
-    border-radius: 15px;
-}
-
 .register__field h3 {
     text-align: center;
     font-size: 18px;
     font-weight: bold;
-    color: var(--base-color);
+    color: var(--color-white);
     font-family: var(--font-family-italic);
 }
 
-/* .btn__submit {
+.error__part { 
     display: flex;
     justify-content: center;
-    align-items: center;
-}
-.btn__submit button {
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 8px 25px;
-    color: var(--color-white);
-    background-color: var(--base-color);
-    border-radius: var(--border-radius-primary);
-} */
-.error__part {
-    
-    padding: 7px 5px;
-    background-color: white;
-    border-radius: var(--border-radius-primary);
+    align-items: center;  
 }
 .error {
-     
+    border-radius: var(--border-radius-primary);
+    font-size: 18px;
     text-align: center;
     font-weight: bold;
-    color: red;
-}
-.register__information {
-    width: 65%;
-    height: 100%;
-    padding: 15px;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    color: rgb(237, 17, 17);
 }
 
-.register__information::-webkit-scrollbar {
-    width: 5px;
-}
-
-.register__information::-webkit-scrollbar-thumb {
-    background-color: var(--color-white);
-    border-radius: 15px;
-}
 </style>

@@ -85,6 +85,7 @@ tbody{
 .body td{
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     padding: 8px;
     justify-content: center;
     letter-spacing: 2px;
