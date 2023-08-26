@@ -48,6 +48,7 @@ import LoginField from '@/components/LoginField.vue'
     justify-content: center;
     height: 100vh;
     align-items: center;
+    overflow: hidden;
 }
 
 .main__background {
